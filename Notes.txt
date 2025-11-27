@@ -1,0 +1,70 @@
+ecryptfs is not the package name on Ubuntu Noble — the correct package is:
+
+ecryptfs-utils
+
+Install it like this:
+
+sudo apt install -y ecryptfs-utils
+
+mkdir -p ~/vault
+sudo mount -t ecryptfs ~/vault ~/vault
+
+
+sudo umount ~/vault
+
+
+or use
+
+./crypt.sh
+
+
+I reccomend aesoption 2 for 192 bit key!
+
+✔ press Enter for NO (default)
+This means:
+Don’t allow unencrypted files inside the encrypted folder (good security).
+
+Enable filename encryption (y/n) [n]: y
+
+Filename Encryption Key (FNEK) Signature [7dd7c7b54e9d90f8]: 
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Want to remove ALL prompts?
+
+Also you can have a full mount script with non-interactive auto-options like:
+
+-ecryptfs_cipher=aes
+-ecryptfs_key_bytes=32
+-ecryptfs_passthrough=no
+-ecryptfs_enable_filename_crypto=yes
+
+
+Then you will never see questions again — mount + unmount will be immediate.
+
+Want me to generate the full upgraded no-prompt menu script?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
